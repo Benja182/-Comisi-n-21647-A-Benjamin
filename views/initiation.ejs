@@ -3,58 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio del Foro</title>
+    <title>Forum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/inicio.css">
 </head>
 <body>
-    Bienvenido <%= nombre %>
+    <header class="head">
+        Welcome <%= nombre %>
+    </header>
     <div class="card">
         <div class="card-body">
-            <h1 class="card-title">Foro Principal </h1>
-            <a type="button" class="btn btn-success"  href="/aggregate">
-                Agregar tema(titulo)
-            </a>
-            <br>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Contenido</th>
-                    <th scope="col">Fecha Creacion</th>
-                    <th scope="col">Imagen(Opcional)</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Eliminar</th>
+            <div class="title-container">
+                <h1 class="card-title">Main Forum</h1>
+                <a type="button" class="btn btn-success"  href="/aggregate">
+                    Create
+                </a>
+            </div>   
+                <table class="table tabla">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Creation date</th>
+                        <th scope="col">Image(Optional)</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
 
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <% foros.forEach((item) => { %>
-                        <tr>
-                          <th scope="row"><%= item.id %></th>
-                          <td>
-                              <button type="button" class="btn btn-dark disabled"><%= item.title %></button>
-                          </td>
-                          <td>
-                              <button type="button" class="btn btn-dark disabled"><%= item.content %></button>
-                          </td>
-                          <td>
-                              <button type="button" class="btn btn-dark disabled"><%= item.date  %></button>
-                          </td>
-                          <td>
-                              <button type="button" class="btn btn-dark disabled"><%= item.image %></button>
-                          </td>
-                          <td>
-                              <a type="button" class="btn btn-primary" href="/edit/<%= item.id %>">Edit</a>
-                          </td>
-                          <td>
-                              <a type="button" class="btn btn-danger" href="/delete/<%= item.id %>">Delete</a>
-                          </td>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <% foros.forEach((item) => { %>
+                            <tr>
+                              <th scope="row"><%= item.id %></th>
+                              <td>
+                                  <button type="button" class="btn btn-dark disabled"><%= item.title %></button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-dark disabled"><%= item.content %></button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-dark disabled"><%= item.date  %></button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-dark disabled"><%= item.image %></button>
+                              </td>
+                              <td>
+                                  <a type="button" class="btn btn-primary" href="/edit/<%= item.id %>">Edit</a>
+                              </td>
+                              <td>
+                                  <a type="button" class="btn btn-danger" href="/delete/<%= item.id %>">Delete</a>
+                              </td>
 
-                        </tr>
-                <% }) %>
-                </tbody>
-              </table>
+                            </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
         </div>
     </div>
 

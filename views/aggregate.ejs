@@ -10,26 +10,26 @@
 <body>
     <div style="padding: 50px;">
         <div class="card border-primary">
-            <div class="card-header bg-primary text-white">
-                Featured
+            <div class="card-header">
+              <h4 class="titulo">Post Personal</h4>
             </div>
             <div class="card-body">
                 <form method="POST">
                     <div class="mb-3">
                       <label for="title" class="form-label">Title</label>
-                      <input type="text" class="form-control" id="title"  placeholder="Enter a title for your post" name="title">
+                      <input type="text" class="form-control input" id="title"  placeholder="Enter a title for your post" name="title" required>
                     </div>
                     <div class="mb-3">
                       <label for="content" class="form-label">Content</label>
-                      <input type="text" class="form-control" id="content" placeholder="Enter a content for your post" name="content">
+                      <input type="text" class="form-control input" id="content" placeholder="Enter a content for your post" name="content" required>
                     </div>
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 ">
                       <label  for="date" class="form-label">Date of Create</label>
-                      <input type="datetime" class="form-control" id="date" name="date">
+                      <input type="date" class="form-control input" id="date" placeholder="Current date" name="date" required>
                     </div>
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 ">
                         <label  for="image" class="form-label">Image</label>
-                        <input type="text" class="form-control" id="image" name="image">
+                        <input type="url" class="form-control input" id="image" placeholder="Enter a URL of image (optional)" name="image">
                       </div>
                     <button type="submit" class="btn btn-success">
                         Save

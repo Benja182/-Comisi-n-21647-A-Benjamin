@@ -3,26 +3,18 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const {
-    dbTest
-} = require('./database.js');
+const {dbTest} = require('./database.js');
 const dotenv = require('dotenv');
 const tareamodel = require('./tareamodel.js');
-const {
-    title
-} = require('process');
+const {title} = require('process');
 
 
 //configurar EJS como motor plantilla
 app.set('view engine', 'ejs');
 app.use(express.json());
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
-dotenv.config({
-    path: './env/.env'
-});
+dotenv.config({path: './env/.env'});
 
 
 
@@ -31,10 +23,7 @@ const PORT = process.env.PORT;
 
 app.get('/', async function (req, res) {
     const foros = await tareamodel.findAll();
-    res.render('initiation', {
-        nombre: 'Profesor',
-        foros: foros
-    })
+    res.render('initiation', {nombre: 'Profesor',foros: foros})
 });
 
 
@@ -44,12 +33,7 @@ app.get('/aggregate', function (req, res) {
 
 
 app.post('/aggregate', async function (req, res) {
-    const {
-        title,
-        content,
-        date,
-        image
-    } = req.body
+    const {title, content, date, image} = req.body
 
     try {
         const post = await tareamodel.create({
@@ -71,9 +55,7 @@ app.post('/aggregate', async function (req, res) {
 
 
 app.get('/delete/:id', async function (req, res) {
-    const {
-        id
-    } = req.params;
+    const {id} = req.params;
 
     try {
         const borrarTarea = await tareamodel.destroy({
@@ -103,9 +85,7 @@ app.get('/edit/:id', async function (req, res) {
         });
 
         if (editarTarea) {
-            res.render('edit', {
-                editarTarea: editarTarea
-            });
+            res.render('edit', {editarTarea: editarTarea});
         } else {
             res.send('No se pudo editar el post: ')
         }
