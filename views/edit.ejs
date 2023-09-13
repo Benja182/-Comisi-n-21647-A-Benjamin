@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/agregar.css">
+</head>
+<body>
+    <div style="padding: 50px;">
+        <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+                Editar post: <%= editarTarea.id %>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="title"  placeholder="Enter a title for your post" name="title" value="<%= editarTarea.title %>">
+                    </div>
+                    <div class="mb-3">
+                      <label for="content" class="form-label">Content</label>
+                      <input type="text" class="form-control" id="content" placeholder="Enter a content for your post" name="content" value="<%= editarTarea.content %>">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <label  for="date" class="form-label">Date of Create</label>
+                      <input type="datetime" class="form-control" id="date" name="date" value="<%= editarTarea.date %>">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <label  for="image" class="form-label">Image</label>
+                        <input type="text" class="form-control" id="image" name="image" value="<%= editarTarea.image %>">
+                      </div>
+                    <button type="submit" class="btn btn-success">
+                        Save
+                    </button>
+                  </form>
+                  
+            </div>
+        </div>
+    </div>        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
