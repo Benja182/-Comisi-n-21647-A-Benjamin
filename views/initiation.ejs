@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="head">
-        Welcome <%= nombre %>
+        Welcome to <%= nombre %>
     </header>
     <div class="card">
         <div class="card-body">
@@ -37,22 +37,26 @@
                             <tr>
                               <th scope="row"><%= item.id %></th>
                               <td>
-                                  <button type="button" class="btn btn-dark disabled"><%= item.title %></button>
+                                  <p type="button" class="btn btn-dark disabled falsebutton"><%= item.title %></p>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-dark disabled"><%= item.content %></button>
+                                  <p type="button" class="btn btn-dark disabled falsebutton"><%= item.content %></p>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-dark disabled"><%= item.date  %></button>
+                                  <p type="button" class="btn btn-dark disabled falsebutton"><%= item.date  %></p>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-dark disabled"><%= item.image %></button>
+                                <% if (item.image) { %>
+                                    <img src="<%= item.image %>" alt="Image">
+                                <% } else { %>
+                                    No image
+                                <% } %>
                               </td>
                               <td>
-                                  <a type="button" class="btn btn-primary" href="/edit/<%= item.id %>">Edit</a>
+                                  <a type="button" class="btn btn-primary falsebutton" href="/edit/<%= item.id %>">Edit</a>
                               </td>
                               <td>
-                                  <a type="button" class="btn btn-danger" href="/delete/<%= item.id %>">Delete</a>
+                                  <a type="button" class="btn btn-danger falsebutton" href="/delete/<%= item.id %>">Delete</a>
                               </td>
 
                             </tr>

@@ -20,8 +20,7 @@ body {
     justify-content: center;
     font-size: 40px;
     color: #222278;
-    padding: 0
-
+    padding: 0;
 }
 
 .title-container {
@@ -31,6 +30,10 @@ body {
 .table {
     background-color: #c37676;
     text-align: center;
+}
+
+.falsebutton {
+    background-color: #eb97d6 !important;
 }
 
 .texto-input {
@@ -55,6 +58,7 @@ body {
     border-right: 0;
     border-radius: 0px 0px 0px 11px;
     color: #ffbbee;
+
 }
 
 
@@ -82,7 +86,7 @@ body {
     justify-content: center;
     background-color: #0000;
     outline: 1px #0099ff solid;
-    color: #1b47c9;
+    color: #fff;
     border: 0;
     transition: all .5s;
     margin-left: auto;
